@@ -27,23 +27,6 @@ https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2
 
 Key thing that I have had to use is rebooting my instance. I keep crashing it and having to reboot. Then it takes 10-15 min for the JupyterHub to come back online.
 
-### Logging into your JupyterHub
-
-After installing TLJH, you'll have to wait abit (like 10-15 min) for everything to get installed. Look at your instance (dashboard above) and copy the public IP address. Your JupyterHub address will be
-```
-<public ip>/hub/login
-```
-When you login the first time, you'll log in with the admin account that you set up when you installed TLJH.
-
-The default UI is classic Jupyter Notebook. You'll see that in the URL when you are logged in:
-```
-<public ip>/<username>/tree
-```
-If you change it to 
-```
-<public ip>/<username>/lab
-```
-You'll get the JupyterLab UI.
 
 ## Setting up AWS IAM user.
 
@@ -60,6 +43,23 @@ I haven't actually tried using my IAM account yet. It keeps complaining so I hav
 You can access the AWS console with
  https://<12-digit-account-id>.signin.aws.amazon.com/console
 
+## Logging into your JupyterHub
+
+After installing TLJH, you'll have to wait abit (like 10-15 min) for everything to get installed. Look at your instance (dashboard above) and copy the public IP address. Your JupyterHub address will be
+```
+<public ip>/hub/login
+```
+When you login the first time, you'll log in with the admin account that you set up when you installed TLJH.
+
+The default UI is classic Jupyter Notebook. You'll see that in the URL when you are logged in:
+```
+<public ip>/<username>/tree
+```
+If you change it to 
+```
+<public ip>/<username>/lab
+```
+You'll get the JupyterLab UI.
 
 ## Setting up my JupyterHub
 
@@ -103,13 +103,13 @@ I tried creating an yml file by exporting the test environment creating above an
 
 At this point, I gave up on creating the environment from a file. And just manually installed packages. It took some trial and error to figure out how to install them. For most
 ```
-sudo conda install -c conda-forge <packagename>
+sudo -E conda install -c conda-forge <packagename>
 ```
 Worked. But for others I needed to use pip
 ```
-sudo pip install <packagename>
+sudo -E pip install <packagename>
 ```
-Pip complained about 'sudo' but I wanted packages available at the root level.
+Pip complained about 'sudo' but I wanted packages available at the root level. `sudo pip install <pkg>` (without the -E) seemed to crash the instance.
 
 ## Change default to JupyterLab
 
