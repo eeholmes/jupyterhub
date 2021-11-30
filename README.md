@@ -25,7 +25,7 @@ http://tljh.jupyter.org/en/latest/install/amazon.html
 Once you have things set-up, you can login to AWS and see the instances that you have running.  The instances are set up on EC2 (virtual servers). I set my instances up on us-west-2. You will see the EC2 service listed on your AWS dashboard, but if you don't, you can get to it from here:
 https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2
 
-Key thing that I have had to use is rebooting my instance. I keep crashing it and having to reboot. Then it takes 10-15 min for the JupyterHub to come back online.
+Key thing that I have had to use is rebooting my instance. I KEEP crashing it and having to reboot, constantly. Then it takes 10-15 min for the JupyterHub to come back online.
 
 
 ## Setting up AWS IAM user.
