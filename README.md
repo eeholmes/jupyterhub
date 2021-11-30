@@ -79,7 +79,7 @@ Then I tried to create the environment. I opened up a terminal and issued this c
 ```
 sudo -E conda env create --file environments/environment_nasa.yml --name nasahackathon
 ```
-This crashed my instance and gave errors about not being able to solve current_repodata.json.
+This crashed my instance and gave errors about not being able to solve current_repodata.json. But I can create an environment with `conda create -n myenv` and I can install packages and it collects package data from current_repodata.json and solves the environment just fine. It is just the `conda env create` command that doesn't work.
 
 I tried making a super small environment.yml file:
 ```
@@ -95,9 +95,11 @@ Nope. Failed.
 
 I tried 
 ```
-sudo -E conda create python=3.9
+sudo -E conda create test python=3.9
 ```
-That worked
+That worked.
+
+I tried creating an yml file by exporting the test environment creating above and using `conda env create -f test.yml`. That failed with the same error about not being able to collect package metadata from current_repodata.json and then it tries repodata.json and hangs...
 
 At this point, I gave up on creating the environment from a file. And just manually installed packages. It took some trial and error to figure out how to install them. For most
 ```
