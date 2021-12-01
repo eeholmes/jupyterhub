@@ -7,59 +7,7 @@ Follow the instructions in the link aboveto set up your JupyterHub on AWS. My no
 
 Cost: The free tier, t2.micro, should be fine for set-up. I think you can leave it on without cost since you get 750 hours per month free. For a recent workshop, where we used t2.small and t2.medium, the cost came out to $100 per day for 65 users. But that was on 2i2c.org. 
 
-## Get an AWS account.
 
-1. First you'll need an AWS account.  Record your username and the 12-digit account id. You'll use the 12 digit number in other places.  All the set-up is easy, just follow all the instructions on this link.
-
-    The free tier for an E2C instance gets you 750 hours per month of t2.micro. Seems like it runs unless you shut down your instance. From the AWS console, you can go to billing (upper right under your username) and scroll down to see how many hours you have used.
-
-## Install TLJH (The Littlest Jupyter Hub)
-
-1. I followed these instructions to install The Littlest Jupyter Hub on AWS. There were a few steps but it was all easy to follow.
-http://tljh.jupyter.org/en/latest/install/amazon.html
-
-    When I installed TLJH (little jupyterhub), I set-up one user (me) with admin. I forget how. It was obvious.
-
-## AWS Dashboard
-
-Once you have things set-up, you can login to AWS and see the instances that you have running.  The instances are set up on EC2 (virtual servers). I set my instances up on us-west-2. You will see the EC2 service listed on your AWS dashboard, but if you don't, you can get to it from here:
-https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2
-
-Key thing that I have had to use is rebooting my instance. I KEEP crashing it and having to reboot, constantly. Then it takes 10-15 min for the JupyterHub to come back online.
-
-
-## Setting up AWS IAM user.
-
-*I haven't used this yet*
-
-After set-up, you can sign into your AWS account here. You'll want to go to the EC2 services to get your instances.
-https://signin.aws.amazon.com/signin
-
-AWS says you shouldn't use your root account for normal admin. You should set up an IAM user.
-https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console
-Follow instructions above. It is fairly self-explanatory. I set my IAM account for Admin Access. Sign in to the AWS Management Console and open the IAM console at  https://console.aws.amazon.com/iam/
-I haven't actually tried using my IAM account yet. It keeps complaining so I have to go back and log in as root.
-
-You can access the AWS console with
- https://<12-digit-account-id>.signin.aws.amazon.com/console
-
-## Logging into your JupyterHub
-
-After installing TLJH, you'll have to wait abit (like 10-15 min) for everything to get installed. Look at your instance (dashboard above) and copy the public IP address. Your JupyterHub address will be
-```
-<public ip>/hub/login
-```
-When you login the first time, you'll log in with the admin account that you set up when you installed TLJH.
-
-The default UI is classic Jupyter Notebook. You'll see that in the URL when you are logged in:
-```
-<public ip>/<username>/tree
-```
-If you change it to 
-```
-<public ip>/<username>/lab
-```
-You'll get the JupyterLab UI.
 
 ## Setting up my JupyterHub
 
