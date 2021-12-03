@@ -24,3 +24,7 @@ Installing TLJH was easy on a t2.micro (but didn't work on non-free instances) a
 6. Once the new environment is installed (into base), go to the hub main page, click the Admin tab and add some users. They will choose a password when they log in.
 7. If you want the default UI to be JupyterLab instead of notebook, run `sudo tljh-config set user_environment.default_app jupyterlab`
 8. Go to the wiki to see how to set up connection to GitHub.
+
+Extras
+
+Need to add `harmony-py` to the environment. `pip install -U harmony-py` works but maybe `conda-forge` too.
