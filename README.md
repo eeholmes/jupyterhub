@@ -28,3 +28,10 @@ Installing TLJH was easy on a t2.micro (but didn't work on non-free instances) a
 Extras
 
 Need to add `harmony-py` to the environment. `pip install -U harmony-py` works but maybe `conda-forge` too.
+
+## To do
+
+Learn how to use nbgitpuller to pull in notebooks into a users JH account
+https://tljh.jupyter.org/en/latest/howto/content/nbgitpuller.html#howto-content-nbgitpuller
+
+
