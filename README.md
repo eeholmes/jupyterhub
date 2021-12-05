@@ -10,7 +10,7 @@ Cost: The free tier, t2.micro, should be fine for set-up. I think you can leave 
 
 ## Setting up my JupyterHub
 
-Installing TLJH was easy on a t2.micro (but didn't work on non-free instances) and worked seamlessly. Setting up my hub…. Not so much.
+Installing TLJH was easy on a t2.micro (but didn't work on non-free instances) and worked seamlessly. Customizing my hub to match the NASA hackathon environment was unsuccessful until I learned that a) 8 Gig storage was too small, b) 1 Gig RAM (t2.micro) was too small and c) I had to install TLJH on t2.micro and then upgrade to t2.small before doing anything else.
 
 [Read my notes on how I successfully set up the hub on the wiki](https://github.com/eeholmes/jupyterhub/wiki)
 
