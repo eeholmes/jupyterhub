@@ -1,4 +1,12 @@
+# Running the notebooks with mybinder.org
+
+Click this badge to open the repo in MyBinder.org. You may have to click it twice because the installation takes awhile and might hang.
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeholmes/jupyterhub/main)
+
+This will open the repo in JupyterLab and you can run the workbooks as we did in the workshop.
+
+
 
 # Setting up a JupyterHub on AWS
 
