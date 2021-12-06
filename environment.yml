@@ -41,3 +41,6 @@ dependencies:
   - conda-lock~=0.12
   - pooch~=1.5
   - pip
+  - pip:
+    - harmony-py
+    - zarr-eosdis-store
