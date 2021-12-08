@@ -1,6 +1,6 @@
 # Running the notebooks with mybinder.org
 
-Anyone can click this badge to open the repo in MyBinder.org. You may have to click it twice because the installation takes awhile and might hang.
+Anyone can click this badge to open the repo in MyBinder.org. You may have to click it twice because the installation takes awhile and might hang. Cost free.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeholmes/jupyterhub/main)
 
