@@ -4,7 +4,8 @@ Anyone can click this badge to open the repo in MyBinder.org. You may have to cl
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeholmes/jupyterhub/main)
 
-This will open the repo in JupyterLab and you can run the workbooks as we did in the workshop. Everthing should work except direct S3 access of data. That requires you to be on a hub in AWS region us-west-2 and mybinder.org is not on that.
+This will open the repo in JupyterLab and you can run the workbooks as we did in the workshop. 
+Everything should work except direct S3 access of data. That requires you to be on a hub in AWS region us-west-2 and mybinder.org is not on that.
 
 <img src="images/mybinder.png" width="500"/>
 
