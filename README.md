@@ -9,6 +9,8 @@ Everything should work except direct S3 access of data. That requires you to be 
 
 <img src="images/mybinder.png" width="500"/>
 
+How do you set up your own Binder JupyterHub? Fork or clone this repo, copy the url of your repo, paste your URL into the box in [MyBinder](https://mybinder.org/), and then copy the link it gives to your Binder JupyterHub. That's it. Literally.
+
 # Setting up a JupyterHub on AWS
 
 I teach 1-3 day workshops with 10-40 people and getting all the software working is often a stumbling block and hinders students learning and progress. I am experimenting with using a JupyterHub on AWS to provide a virtual coding platform.
