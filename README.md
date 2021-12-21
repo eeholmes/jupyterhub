@@ -13,19 +13,11 @@ Everything should work except direct S3 access of data. That requires you to be 
 
 # Setting up a JupyterHub on AWS
 
-I teach 1-3 day workshops with 10-40 people and getting all the software working is often a stumbling block and hinders students learning and progress. I am experimenting with using a JupyterHub on AWS to provide a virtual coding platform.
-
-I was inspired by this post by someone who uses a JupyterHub for similar kinds of workshops. https://outpw.github.io/tutorials/JupyterHubSetup.html
-Follow the instructions in the link aboveto set up your JupyterHub on AWS. My notes give my experience following the instructions and how I customized my hub.
+Another option is to set up your own "little" JupyterHub on AWS to provide a virtual coding platform. Users will have their own environment where they can save their notebooks and do a project. This is a good option for small workshops (10-20) where users will not need too much computing power or storage space. You'll upgrade your AWS instance to something large for the workshop and then (delete user files) and downsize after the workshop is done. The instructions here were inspired by this post by someone who uses a JupyterHub for similar kinds of workshops. https://outpw.github.io/tutorials/JupyterHubSetup.html
 
 Cost: The free tier, t2.micro, should be fine for set-up. I think you can leave it on without cost since you get 750 hours per month free. For a recent workshop, where we used t2.small and t2.medium, the cost came out to $100 per day for 65 users, so ca $1.55 per user per day. But that was on 2i2c.org. I have a t2.small instance (2 Gig RAM, 2 CPU, 30 gig storage) running continuously and it is costing 50 cents per day (so $15 per month). I'll stop it once I am done testing.
 
-
-## Setting up my JupyterHub
-
-Installing TLJH was easy on a t2.micro (but didn't work on non-free instances) and worked seamlessly. Customizing my hub to match the NASA hackathon environment was unsuccessful until I learned that a) 8 Gig storage was too small, b) 1 Gig RAM (t2.micro) was too small and c) I had to install TLJH on t2.micro and then upgrade to t2.small before doing anything else.
-
-[Read my notes on how I successfully set up the hub on the wiki](https://github.com/eeholmes/jupyterhub/wiki)
+**Overall** setting up a virtual machine and JupyterHub on AWS was easy and I had never done it before. Installing TLJH ("the littlest jupyter hub") was easy on a t2.micro instance (but didn't work on non-free instances) and worked seamlessly. Customizing my hub to match the NASA hackathon environment was unsuccessful until I learned that a) 8 Gig storage was too small, b) 1 Gig RAM (t2.micro) was too small and c) I had to install TLJH on t2.micro and then upgrade my instance to t2.small before doing anything else. But once I upgraded to a t2.small and more storage, installation worked easily.  [Read my copious notes on how I successfully set up the hub on the wiki](https://github.com/eeholmes/jupyterhub/wiki)
 
 ## Basic steps
 
