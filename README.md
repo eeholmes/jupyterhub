@@ -11,6 +11,10 @@ Everything should work except direct S3 access of data. That requires you to be 
 
 **How do you set up your own Binder JupyterHub?** Fork or clone this repo, copy the url of your repo, paste your URL into the box in [MyBinder](https://mybinder.org/), and then copy the link it gives to your Binder JupyterHub. That's it. Literally. The key bit is the `environment.yml` files which says what Python version (if needed) and packages to put in your Python environment.
 
+# Running with Pangeo Binder
+
+As noted above, MyBinder.org is not on AWS us-west-2 so you are limited in some of your cloud computing options with NASA EarthData. For example S3 access requires that you are on AWS us-west-2. You can use [Pangeo Binder](https://aws-uswest2-binder.pangeo.io/) instead. It operates the same as MyBinder. Fork/clone this repo, copy the URL of you new (cloned) repo, paste that URL into the box on Pangeo Binder. That's it and its free. Note, your file changes won't be persistent (= you will lose your changes when you finish) so make sure to download the results of whatever you are doing.
+
 # Setting up a JupyterHub on AWS
 
 Another option is to set up your own "little" JupyterHub on AWS to provide a virtual coding platform. Users will have their own environment where they can save their notebooks and do a project. This is a good option for small workshops (10-20) where users will not need too much computing power or storage space. You'll upgrade your AWS instance to something large for the workshop and then (delete user files) and downsize after the workshop is done. The instructions here were inspired by this post by someone who uses a JupyterHub for similar kinds of workshops. https://outpw.github.io/tutorials/JupyterHubSetup.html
