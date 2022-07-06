@@ -30,7 +30,7 @@ Cost: The free tier, t2.micro, should be fine for set-up. I think you can leave 
 3. Go back to the AWS dashboard. Stop your instance, and go to instance setting and upgrade to t2.small. Restart your instance. You'll have a new public IP. See note below for setting a fixed IP address.
 4. Log into your JH with the new public IP. Copy [environment.yml](https://github.com/eeholmes/jupyterhub/blob/main/environment.yml) into a file at the base level (not in a folder). Note this is the environment used for the [NASA Cloud hackathon](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/) with a few small changes needed for a TLJH JupyterHub set-up.
 5. Open a terminal in your JupyterHub--if you are in notebook format, look for "New" on the right. If you are in lab format, look in the File > New dropdown menu. In the terminal, run this code `sudo -E mamba env update -f environment.yml`. Might take awhile to install the environment. **Make sure you have at least 16 Gig of storage and have 2 Gig RAM**, i.e. don't try this on the default free tier of t2.micro with 8 Gig of storage.
-6. Once the new environment is installed (into base), go to the hub main page, click the Admin tab and add some users. They will choose a password when they log in.
+6. Once the new environment is installed (into base) and you are logged in as admin (see step 2), go to the hub main page (File > Hub Control Panel), click the Admin tab and add some users. They will choose a password when they log in.
 7. Go to the [wiki](https://github.com/eeholmes/jupyterhub/wiki) to see how to set up your connection to GitHub.
 
 Optional
