@@ -40,4 +40,67 @@ Optional
 * Getting content (notebooks) into the hub for your students. One option is to have your students clone a GitHub repo with your content (notebooks), then have them pull into content from upstream (sync with upstream repo), and then pull the the updated GitHub repo content in the hub. That's a few steps. Another common option is to use  nbgitpuller to automatically pull in notebooks into a users JH account
 https://tljh.jupyter.org/en/latest/howto/content/nbgitpuller.html#howto-content-nbgitpuller The downside of this approach is that the students will need to make copies of the content if they want to save it.
 
+# Getting Quarto Set Up
+
+* Log into your hub using your admin username and password, which is the root user/password for your AWS EC2 account.
+
+* First get rid of the TeXLive installation as it is almost certainly not the latest and you will be blocked for doing anything without the latest version
+```
+sudo apt autoremove --purge texlive tex-common
+```
+Note if you happened to install TeXLive yourself with `install-tl` then use `sudo tlmgr remove --all`
+
+
+* Next install Quarto
+
+Update the `deb` file names as needed by going to https://github.com/quarto-dev/quarto-cli/releases/download
+```
+curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.1.251/quarto-1.1.251-linux-amd64.deb
+gdebi --non-interactive quarto-1.1.251-linux-amd64.deb
+```
+
+* Next install TinyTeX
+
+Why not use TeXLive? Well for the life of me, I could not get auto-installation of packages to work and Quarto really wants that on. So I needed a local TeX installation where the packages could be installed locally in my user directory. Technically, you should be able to tell Quarto to use `tlmgr` with `--usermode` but I had no luck with that. 
+```
+quarto install tool tinytex
+```
+
+* Next add the path to the tex binaries. First print out your current path and paste it somewhere! This way you can recover if you mess up your path statement.
+```
+$PATH
+```
+Copy and paste that somewhere handy.
+
+Next make sure you have the right home directory.
+```
+~
+```
+will show it. It'll look like `/home/jupyter-abc/`.
+
+Now prepend, the path to tex to the path. Make sure you get that `:` in there! Command is like `PATH=<new path>:$PATH`
+```
+PATH=/home/jupyter-eeholmes/.TinyTeX/bin/x86_64-linux:$PATH
+```
+
+Oh no! I messed up. It's ok. You copied down the old $PATH, right? You can recover with
+```
+PATH=<old path>
+```
+
+## Problems I ran into
+
+I mucked up `libfontconfig` and xelatex was not happy
+```
+sudo apt-get install libfontconfig
+```
+Then there was a weird error about L3 programming language mismake. Thank goodness for Stackoverflow.
+```
+fmtutil-sys --all
+```
+Fixed it. If it complains about folder being `user` then use `fmtutil-user --all`
+
+## New users
+
+New users will have Quarto but not TeX. :( **Each user needs to install TinyTeX themselves.** Awful, awful, awful. Alternative is to give users write access to a system wide installion, but that seems bad too. It would be easy to create package conflicts.
 
